@@ -1,1 +1,9 @@
-button Hola
+ul
+  each element in MainMenu.links
+    if Object.keys(element).includes('href')
+      li: a(href!=element.href)!=element.label
+    else
+      li: button!= element.label
+      ul: each subelement in element.links
+        li 
+          a(href!=subelement.href)!=subelement.label

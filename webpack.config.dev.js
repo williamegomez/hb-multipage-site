@@ -1,40 +1,31 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dev'),
-    compress: true,
-    port: 8080
+    contentBase: './dist'
   },
   entry: {
     main: './src/main.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dev'),
-    filename: '[name].js'
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
         enforce: 'pre',
-        test: /\.jsx?$/,
+        test: /\.js$/,
         loader: 'standard-loader',
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         options: {
           error: false,
           snazzy: true
-        }
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
         }
       },
       {
@@ -47,20 +38,22 @@ module.exports = {
       },
       {
         include: /\.pug/,
-        loader: ['raw-loader', 'pug-html-loader']
+        use: [ {loader: 'raw-loader'}, { loader: 'pug-html-loader',
+          options: {
+            data: {MainMenu: require('./data/MainMenu.json')}
+          }
+        }]
       }
     ]
   },
   plugins: [
     new StyleLintPlugin({/* Options */}),
     new ExtractTextPlugin('styles.css'),
-    new CopyWebpackPlugin([{
-      context: 'src',
-      from: '**/*.html',
-      to: './'
-    }]),
     new UglifyJsPlugin({
       sourceMap: true
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
     })
   ]
 }
