@@ -1,4 +1,5 @@
 ul
+  li: a(href!=MainMenu.logo.link): img(src!=MainMenu.logo.img)
   each element in MainMenu.links
     if Object.keys(element).includes('href')
       li: a(href!=element.href)!=element.label

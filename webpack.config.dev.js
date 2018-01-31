@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -14,7 +15,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -55,6 +56,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       chunks: ['main']
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/',
+        to: 'assets/'
+      }
+    ])
   ]
 }
