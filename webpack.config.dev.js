@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -29,7 +29,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test:/\.(s*)css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [{ loader: 'css-loader', options: {minimize: true, sourceMap: true} },
@@ -53,7 +53,8 @@ module.exports = {
       sourceMap: true
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      chunks: ['main']
     })
   ]
 }

@@ -1,3 +1,4 @@
+import 'reset-css/reset.css'
 import MainMenu from './modules/MainMenu/MainMenu'
 
 /* eslint-disable */
