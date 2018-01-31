@@ -13,11 +13,11 @@
       "links": [
         {
           "label": "About 1",
-          "href": "/about-page.hmtl"
+          "href": "/about-page.html"
         },
         {
           "label": "About 2",
-          "href": "/about-page.hmtl"
+          "href": "/about-page.html"
         }
       ]
     },
@@ -26,11 +26,11 @@
       "links": [
         {
           "label": "About 1",
-          "href": "/about-page.hmtl"
+          "href": "/about-page.html"
         },
         {
           "label": "About 2",
-          "href": "/about-page.hmtl"
+          "href": "/about-page.html"
         }
       ]
     }
