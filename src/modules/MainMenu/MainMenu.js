@@ -3,6 +3,8 @@
 import template from './MainMenu.pug'
 import './MainMenu.scss'
 
+console.log(template)
+
 export default class MainMenu {
   constructor (node) {
     this.node = node

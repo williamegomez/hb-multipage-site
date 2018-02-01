@@ -41,7 +41,7 @@ module.exports = {
         include: /\.pug/,
         use: [ {loader: 'raw-loader'}, { loader: 'pug-html-loader',
           options: {
-            data: {MainMenu: require('./data/MainMenu.json')}
+            data: { jsonMenu: require('./data/MainMenu.json')}
           }
         }]
       }

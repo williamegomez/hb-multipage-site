@@ -1,6 +1,15 @@
 include ../../../node_modules/bemto.pug/bemto.pug
-+b.H1(class='block1')
-  +e.element1 Foo
-  +b.block2
-    +e.A(href="#bar").element Bar
-  +e.element2 Baz
+
++b(class='main-menu')
+  +e.A(class='logo')
+    +e.IMG(class='imagelogo' src!=jsonMenu.logo.img href!=jsonMenu.logo.link)
+
+  +e.UL(class='list')
+    each element in jsonMenu.links
+      if Object.keys(element).includes('href')
+        +e.LI(class='item'): a(href!=element.href)!=element.label
+      else
+        +e.LI(class='item'): button!= element.label
+        +e.UL(class='sublist'): each subelement in element.links
+          +e.LI(class='subitem') 
+            +e.A(href!=subelement.href)!=subelement.label
