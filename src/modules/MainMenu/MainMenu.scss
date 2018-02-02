@@ -1,3 +1,138 @@
+@import 'src/modules/shared/base.scss';
+
 .main-menu {
   background-color: #2a3132;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+
+  &__upper{
+    z-index: 3;
+    width: 100%;
+    background-color: #2a3132;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__hamburger{
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid white;
+    border-radius: 3px;
+    margin: 10px;
+
+    &-top{
+      display: block;
+      height: 2px;
+      width: 20px;
+      background-color: white;
+      transform: translateY(-3px);
+      transition: 0.5s;
+
+      &--open{
+        transform: translateY(1px) rotate(45deg);
+      }
+    }
+
+    &-bottom{
+      display: block;
+      height: 2px;
+      width: 20px;
+      background-color: white;
+      transform: translateY(3px);
+
+      &--open{
+        transform: translateY(-1px) rotate(-45deg);
+        transition: 0.5s;
+      }
+    }
+  }
+
+  &__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  &__imagelogo{
+    height: 80px;
+  }
+
+  &__list{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-color: #2a3132;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+
+    &--open{
+      transform: translateY(100%);
+    }
+  }
+
+  &__item{
+    height: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    border: 0px solid white;
+    border-width: 0px 0px 1px 0px;
+  }
+
+  &__sublist{
+    width: 80%;
+    background-color: #454747;
+    display: none;
+
+    &--open{
+      display: block;
+    }
+  }
+
+  &__subitem{
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+  }
+
+  &__button{
+    padding: 0;
+    border: none;
+    height: 30px;
+    color: white;
+    width: 100%;
+    background-color: transparent;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  &__link{
+    height: 30px;
+    color: white;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+  }
 }

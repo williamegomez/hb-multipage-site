@@ -48,7 +48,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new StyleLintPlugin({/* Options */}),
+    new StyleLintPlugin(),
     new ExtractTextPlugin('styles.css'),
     new UglifyJsPlugin({
       sourceMap: true
