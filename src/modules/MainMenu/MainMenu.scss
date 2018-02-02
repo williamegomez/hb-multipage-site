@@ -1,9 +1,10 @@
 @import 'src/modules/shared/base.scss';
+@import 'src/modules/shared/variables.scss';
 
 .main-menu {
-  background-color: #2a3132;
+  background-color: $primaryColor;
   font-family: 'Lato', Arial, sans-serif;
-  font-size: 25px;
+  font-size: $mediumSizeFont;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +14,7 @@
   &__upper{
     z-index: 3;
     width: 100%;
-    background-color: #2a3132;
+    background-color: $primaryColor;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,7 +86,7 @@
     width: 100%;
     position: absolute;
     bottom: 0px;
-    background-color: #2a3132;
+    background-color: $primaryColor;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,9 +162,9 @@
     justify-content: center;
     align-items: center;
     padding: 4px;
-    background-color: #454747;
+    background-color:$secondaryColor;
     &:hover{
-      background-color: #8f8f8f;
+      background-color: $hoverColor;
     }
   }
 
@@ -171,38 +172,38 @@
     z-index: 2;
     padding: 0;
     border: none;
-    height: 40px;
+    height: $mediumSize;
     color: white;
     width: 100%;
     font-family: 'Lato', Arial, sans-serif;
-    font-size: 25px;
+    font-size: $mediumSizeFont;
 
     @include large {
-      height: 60px;
-      font-size: 35px;
+      height: $largeSize;
+      font-size: $largeSizeFont;
     }
 
     cursor: pointer;
-    background-color: #2a3132;
+    background-color: $primaryColor;
 
     &:hover{
-      background-color: #8f8f8f;
+      background-color: $hoverColor;
     }
   }
 
   &__link{
-    height: 40px;
+    height: $mediumSize;
     color: white;
     width: 100%;
     text-decoration: none;
     text-align: center;
-    line-height: 40px;
+    line-height: $mediumSize;
     cursor: pointer;
 
     @include large {
-      height: 60px;
-      line-height: 60px;
-      font-size: 35px;
+      height: $largeSize;
+      line-height: $largeSize;
+      font-size: $largeSizeFont;
     }
   }
 }
