@@ -1,20 +1,16 @@
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist'
-  },
   entry: {
     main: './src/main.js'
   },
   output: {
     path: __dirname + '/dist',
-    filename: '[name].js',
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -43,11 +39,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new StyleLintPlugin(),
     new ExtractTextPlugin('styles.css'),
-    new UglifyJsPlugin({
-      sourceMap: true
-    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       chunks: ['main']
