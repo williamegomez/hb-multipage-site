@@ -6,6 +6,7 @@ import './MainMenu.scss'
 export default class MainMenu {
   constructor (node) {
     this.node = node
+    this.indexSublist = -1
     this.generateDOM(template)
     this.getNodes()
     this.setEvents()
@@ -32,8 +33,15 @@ export default class MainMenu {
   }
 
   handleClickList (event) {
-    var index = Array.from(this.buttons).indexOf(event.target)
-    this.sublists[index].classList.toggle('main-menu__sublist--open')
+    this.newIndexSublist = Array.from(this.buttons).indexOf(event.target)
+    console.log(this.indexSublist)
+    if (this.indexSublist !== -1) {
+      this.sublists[this.indexSublist].classList.remove('main-menu__sublist--open')
+    }
+    if (this.indexSublist !== this.newIndexSublist) {
+      this.sublists[this.newIndexSublist].classList.add('main-menu__sublist--open')
+    }
+    this.indexSublist = this.newIndexSublist
   }
 
   handleHamburger (event) {
