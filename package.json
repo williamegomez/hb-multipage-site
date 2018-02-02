@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint:js": "standard '/src/**/*.js'",
-    "//": "Development",
     "webpack:dev": "webpack --config webpack.config.dev.js",
-    "//": "Production",
     "webpack:prod": "webpack --config webpack.config.prod.js",
     "serve": "webpack-dev-server --config webpack.config.dev.js"
   },

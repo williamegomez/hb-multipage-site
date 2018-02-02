@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -38,16 +38,12 @@ module.exports = {
       },
       {
         include: /\.pug/,
-        use: [ {loader: 'raw-loader'}, { loader: 'pug-html-loader',
-          options: {
-            data: {MainMenu: require('./data/MainMenu.json')}
-          }
-        }]
+        use: [ {loader: 'pug-loader'}]
       }
     ]
   },
   plugins: [
-    new StyleLintPlugin({/* Options */}),
+    new StyleLintPlugin(),
     new ExtractTextPlugin('styles.css'),
     new UglifyJsPlugin({
       sourceMap: true

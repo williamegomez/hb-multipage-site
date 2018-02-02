@@ -1,5 +1,5 @@
 ul
-  each element in MainMenu.links
+  each element in links
     if Object.keys(element).includes('href')
       li: a(href!=element.href)!=element.label
     else
