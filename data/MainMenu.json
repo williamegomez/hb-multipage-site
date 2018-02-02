@@ -1,0 +1,38 @@
+{
+  "logo": {
+    "img": "http://www.citizengo.org/sites/default/files/images/google-200x200.7714256da16f.png",
+    "link": "/"
+  },
+  "links": [
+    {
+      "label": "Google",
+      "href": "https://www.google.com"
+    },
+    {
+      "label": "Contenido 1",
+      "links": [
+        {
+          "label": "About 1",
+          "href": "/about-page.html"
+        },
+        {
+          "label": "About 2",
+          "href": "/about-page.html"
+        }
+      ]
+    },
+    {
+      "label": "Contenido 2",
+      "links": [
+        {
+          "label": "About 1",
+          "href": "/about-page.html"
+        },
+        {
+          "label": "About 2",
+          "href": "/about-page.html"
+        }
+      ]
+    }
+  ]
+}
