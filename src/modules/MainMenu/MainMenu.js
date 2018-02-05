@@ -1,21 +1,14 @@
-/* global DOMParser */
-
 import template from './MainMenu.pug'
 import './MainMenu.scss'
+import jsonData from './../../../data/MainMenu.json'
 
 export default class MainMenu {
   constructor (node) {
     this.node = node
     this.indexSublist = -1
-    this.generateDOM(template)
+    this.node.innerHTML = template(jsonData)
     this.getNodes()
     this.setEvents()
-  }
-
-  generateDOM () {
-    var parser = new DOMParser()
-    var shell = parser.parseFromString(template, 'text/html').body.children[0]
-    this.node.appendChild(shell)
   }
 
   getNodes () {

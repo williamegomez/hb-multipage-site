@@ -1,16 +1,14 @@
-include ../../../node_modules/bemto.pug/bemto.pug
-
 div(class='main-menu')
 
   div(class='main-menu__upper')
     a(class='main-menu__logo')
-      img(class='main-menu__imagelogo' src!=jsonMenu.logo.img href!=jsonMenu.logo.link)
+      img(class='main-menu__imagelogo' src!=logo.img href!=logo.link)
 
     div(class='main-menu__hamburger')
       span(class='main-menu__hamburger-top')
       span(class='main-menu__hamburger-bottom')
 
-  ul(class='main-menu__list'): each element in jsonMenu.links
+  ul(class='main-menu__list'): each element in links
     if Object.keys(element).includes('href')
       li(class='main-menu__item')
         a(class='main-menu__link' href!=element.href)!=element.label

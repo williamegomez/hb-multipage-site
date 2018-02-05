@@ -1,15 +1,11 @@
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist'
-  },
   entry: {
     main: './src/main.js'
   },
@@ -39,20 +35,14 @@ module.exports = {
       },
       {
         include: /\.pug/,
-        use: [ {loader: 'raw-loader'}, { loader: 'pug-html-loader',
-          options: {
-            data: { jsonMenu: require('./data/MainMenu.json')}
-          }
-        }]
+        use: [ {loader: 'pug-loader'}]
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new StyleLintPlugin(),
     new ExtractTextPlugin('styles.css'),
-    new UglifyJsPlugin({
-      sourceMap: true
-    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       chunks: ['main']
