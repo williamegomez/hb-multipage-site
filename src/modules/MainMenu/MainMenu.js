@@ -11,6 +11,15 @@ export default class MainMenu {
     this.setEvents()
   }
 
+  static get states () {
+    return {
+      subMenuOpen: 'main-menu__sublist--open',
+      menuOpen: 'main-menu__list--open',
+      burgerTopOpen: 'main-menu__hamburger-top--open',
+      burgerBottomOpen: 'main-menu__hamburger-bottom--open'
+    }
+  }
+
   getNodes () {
     this.list = this.node.querySelector('.main-menu__list')
     this.buttons = this.node.querySelectorAll('.main-menu__button')
@@ -27,19 +36,18 @@ export default class MainMenu {
 
   handleClickList (event) {
     this.newIndexSublist = Array.from(this.buttons).indexOf(event.target)
-    console.log(this.indexSublist)
     if (this.indexSublist !== -1) {
-      this.sublists[this.indexSublist].classList.remove('main-menu__sublist--open')
+      this.sublists[this.indexSublist].classList.remove(MainMenu.states.subMenuOpen)
     }
     if (this.indexSublist !== this.newIndexSublist) {
-      this.sublists[this.newIndexSublist].classList.add('main-menu__sublist--open')
+      this.sublists[this.newIndexSublist].classList.add(MainMenu.states.subMenuOpen)
     }
     this.indexSublist = this.newIndexSublist
   }
 
   handleHamburger (event) {
-    this.list.classList.toggle('main-menu__list--open')
-    this.hamburgerTop.classList.toggle('main-menu__hamburger-top--open')
-    this.hamburgerBottom.classList.toggle('main-menu__hamburger-bottom--open')
+    this.list.classList.toggle(MainMenu.states.menuOpen)
+    this.hamburgerTop.classList.toggle(MainMenu.states.burgerTopOpen)
+    this.hamburgerBottom.classList.toggle(MainMenu.states.burgerBottomOpen)
   }
 }
