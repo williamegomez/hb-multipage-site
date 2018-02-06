@@ -3,7 +3,7 @@
 
 .main-menu {
   background-color: $primaryColor;
-  font-family: 'Lato', Arial, sans-serif;
+  font-family: $fonts;
   font-size: $mediumSizeFont;
   display: flex;
   flex-direction: column;
@@ -175,7 +175,7 @@
     height: $mediumSize;
     color: white;
     width: 100%;
-    font-family: 'Lato', Arial, sans-serif;
+    font-family: $fonts;
     font-size: $mediumSizeFont;
 
     @include large {
