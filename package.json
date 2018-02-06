@@ -6,7 +6,8 @@
   "scripts": {
     "lint:js": "standard '/src/**/*.js'",
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server -c-1 --silent"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "css-loader": "^0.28.9",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.11.1",
     "husky": "^0.14.3",
     "node-sass": "^4.7.2",
     "pug-html-loader": "^1.1.5",
