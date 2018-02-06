@@ -1,15 +1,15 @@
 {
   "logo": {
-    "img": "http://www.citizengo.org/sites/default/files/images/google-200x200.7714256da16f.png",
+    "img": "./assets/images/logo-fitted.svg",
     "link": "/"
   },
   "links": [
     {
-      "label": "Google",
-      "href": "https://www.google.com"
+      "label": "Home",
+      "href": "/"
     },
     {
-      "label": "Contenido 1",
+      "label": "Services",
       "links": [
         {
           "label": "About 1",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "label": "Contenido 2",
+      "label": "VIP zone",
       "links": [
         {
           "label": "About 1",
@@ -33,6 +33,23 @@
           "href": "/about-page.html"
         }
       ]
+    },
+    {
+      "label": "About us",
+      "links": [
+        {
+          "label": "About 1",
+          "href": "/about-page.html"
+        },
+        {
+          "label": "About 2",
+          "href": "/about-page.html"
+        }
+      ]
+    },
+    {
+      "label": "Contact us",
+      "href": "/contact-us/"
     }
   ]
 }
