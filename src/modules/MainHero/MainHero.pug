@@ -1,0 +1,8 @@
+h1(class='main-hero__header')!= header
+p(class='main-hero__description')!= description
+a(href!=cta.url class='main-hero__cta')!= cta.label
+picture(class='main-hero__picture')
+  source(media='(max-width: 639px)' srcset!=images.small.url)
+  source(media='(min-width: 640px) and (max-width: 1024px)' srcset!=images.medium.url)
+  source(media='(min-width: 1024px)' srcset!=images.large.url)
+  img(class='main-hero__img')

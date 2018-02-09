@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: relative;
   width: 100%;
 
   &__upper{
@@ -91,17 +91,22 @@
     flex-direction: column;
     align-items: center;
     transition: 1s;
+    z-index: 2;
 
     @include medium {
       position: unset;
       flex-direction: row;
-      transform: translateY(0%);
+      &--open{
+        transform: translateY(0%);
+      }
     }
 
     @include large {
       position: unset;
       flex-direction: row;
-      transform: translateY(0%);
+      &--open{
+        transform: translateY(0%);
+      }
     }
 
     &--open{
@@ -120,10 +125,12 @@
 
     @include medium {
       position: relative;
+      border-width: 0px;
     }
 
     @include large {
       position: relative;
+      border-width: 0px;
     }
   }
 
