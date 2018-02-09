@@ -12,9 +12,17 @@
     text-align: center;
     position: absolute;
     top: 25%;
-    font-size: 50px;
+    font-size: $mediumSizeFont+10px;
     text-shadow: 1px 1px black;
     color: white;
+
+    @include medium {
+      font-size: $mediumSizeFont+20px;
+    }
+
+    @include large {
+      font-size: $largeSizeFont+20px;
+    }
   }
 
   &__description {
@@ -24,6 +32,15 @@
     color: white;
     text-shadow: 1px 1px black;
     top: 50%;
+    font-size: 20px;
+
+    @include medium {
+      font-size: $mediumSizeFont;
+    }
+
+    @include large {
+      font-size: $largeSizeFont;
+    }
   }
 
   &__cta {
@@ -33,10 +50,21 @@
     transform: translateX(-50%);
     background-color: $primaryColor;
     color: white;
-    padding: 10px;
-    border-radius: 3px;
+    padding: 5px;
+    border-radius: 5px;
     text-decoration: none;
     border: 1px solid white;
+    font-size: 15px;
+
+    @include medium {
+      font-size: $mediumSizeFont;
+      padding: 7px;
+    }
+
+    @include large {
+      font-size: $largeSizeFont;
+      padding: 10px;
+    }
   }
 
   &__picture {
