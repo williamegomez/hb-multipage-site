@@ -8,15 +8,16 @@ export default class HeroCss {
     this.screenWidth = window.screen.width
     this.node.innerHTML = template(jsonHero)
     this.image = node.querySelector('.hero-css__img')
+    this.image.style.backgroundImage = `url(${jsonHero.images.small.url})`
     this.setSizeImage()
   }
 
   setSizeImage () {
     if ((this.screenWidth > 639) & (this.screenWidth < 1024)) {
-      this.image.classList.add('hero-css__img--medium')
+      this.image.style.backgroundImage = `url(${jsonHero.images.medium.url})`
     }
     if (this.screenWidth > 1024) {
-      this.image.classList.add('hero-css__img--large')
+      this.image.style.backgroundImage = `url(${jsonHero.images.large.url})`
     }
   }
 }

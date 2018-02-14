@@ -7,13 +7,13 @@
   },
   "images": {
     "small": {
-      "url": "./assets/images/main_hero_small.jpg"
+      "url": "./assets/images/wash-small.jpg"
     },
     "medium": {
-      "url": "./assets/images/main_hero_medium.jpg"
+      "url": "./assets/images/wash-medium.jpg"
     },
     "large": {
-      "url": "./assets/images/main_hero_large.jpg"
+      "url": "./assets/images/wash-large.jpg"
     }
   }
 }
