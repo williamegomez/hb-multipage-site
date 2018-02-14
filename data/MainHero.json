@@ -7,15 +7,15 @@
   },
   "images": {
     "small": {
-      "url": "./assets/images/main_hero_small.jpg",
+      "url": "assets/images/main_hero_small.jpg",
       "description": "Car wash hero image for small viewports"
     },
     "medium": {
-      "url": "./assets/images/main_hero_medium.jpg",
+      "url": "assets/images/main_hero_medium.jpg",
       "description": "Car wash hero image for medium viewports"
     },
     "large": {
-      "url": "./assets/images/main_hero_large.jpg",
+      "url": "assets/images/main_hero_large.jpg",
       "description": "Car wash hero image for large viewports"
     }
   }

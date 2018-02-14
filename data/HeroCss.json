@@ -1,0 +1,19 @@
+{
+  "header": "CARWASH",
+  "description": "The best car wash in colombia",
+  "cta": {
+    "label": "Learn more",
+    "url": "/learn-more.html"
+  },
+  "images": {
+    "small": {
+      "url": "./assets/images/wash-small.jpg"
+    },
+    "medium": {
+      "url": "./assets/images/wash-medium.jpg"
+    },
+    "large": {
+      "url": "./assets/images/wash-large.jpg"
+    }
+  }
+}
