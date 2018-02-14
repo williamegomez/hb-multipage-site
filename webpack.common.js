@@ -40,10 +40,9 @@ module.exports = {
       {
         test: /\.(png|jp(e*)g|svg)$/, 
         use: [{
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
-            limit: 8000, // Convert images < 8kb to base64 strings
-            name: 'images/[hash]-[name].[ext]'
+            name: 'assets/images/[name].[ext]'
           }
         }]
       }
@@ -56,6 +55,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       chunks: ['main']
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/',
+        to: 'assets/'
+      }
+    ])
   ]
 }

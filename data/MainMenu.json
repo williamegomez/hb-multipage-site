@@ -1,6 +1,6 @@
 {
   "logo": {
-    "img": "./assets/images/logo-fitted.svg",
+    "img": "assets/images/logo-fitted.svg",
     "link": "/"
   },
   "links": [
